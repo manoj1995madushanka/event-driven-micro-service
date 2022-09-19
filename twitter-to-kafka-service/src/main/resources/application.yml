@@ -1,0 +1,9 @@
+#application.yml or application.properties used to bind external properties into an application at runtime
+
+twitter-to-kafka-service:
+  twitterKeywords:
+    - Java
+    - Microservices
+    - Spring
+    - Kafka
+    - Elasticsearch
