@@ -1,14 +1,13 @@
 package com.twitter_to_kafka_service;
 
-import org.springframework.beans.factory.config.ConfigurableBeanFactory;
+import com.twitter_to_kafka_service.config.ConfigData;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Scope;
-import org.springframework.context.annotation.ScopedProxyMode;
-import org.springframework.web.context.WebApplicationContext;
 
-import javax.annotation.PostConstruct;
+import java.util.Arrays;
 
 /*
 application initialization logics
@@ -18,6 +17,14 @@ application initialization logics
 // below one is not recommended
 //@Scope(value = WebApplicationContext.SCOPE_REQUEST, proxyMode = ScopedProxyMode.TARGET_CLASS)
 public class TwitterToKafkaServiceApplication implements CommandLineRunner {
+
+    private static final Logger LOG = LoggerFactory.getLogger(TwitterToKafkaServiceApplication.class);
+    private final ConfigData configData;
+
+    public TwitterToKafkaServiceApplication(ConfigData configData) {
+        this.configData = configData;
+    }
+
 
     public static void main(String[] args) {
         SpringApplication.run(TwitterToKafkaServiceApplication.class, args);
@@ -30,9 +37,9 @@ public class TwitterToKafkaServiceApplication implements CommandLineRunner {
     public void init(){
 
     }*/
-
     @Override
     public void run(String... args) throws Exception {
-        System.out.println("initiating");
+       LOG.info("initiating");
+       LOG.info(String.valueOf(configData.getTwitterKeywords()));
     }
 }
