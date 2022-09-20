@@ -1,0 +1,18 @@
+2022-09-19 21:53:48 [main] INFO  c.t.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication using Java 11.0.13 on DESKTOP-QFEC6PE with PID 8176 (F:\event-driven-micro-service\base-service\twitter-to-kafka-service\target\classes started by ACER in F:\event-driven-micro-service\base-service)
+2022-09-19 21:53:48 [main] INFO  c.t.TwitterToKafkaServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2022-09-19 21:53:50 [main] INFO  c.t.TwitterToKafkaServiceApplication - Started TwitterToKafkaServiceApplication in 2.245 seconds (JVM running for 5.466)
+2022-09-19 21:53:50 [main] INFO  c.t.TwitterToKafkaServiceApplication - initiating
+2022-09-19 21:54:34 [main] INFO  c.t.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication using Java 11.0.13 on DESKTOP-QFEC6PE with PID 9228 (F:\event-driven-micro-service\base-service\twitter-to-kafka-service\target\classes started by ACER in F:\event-driven-micro-service\base-service)
+2022-09-19 21:54:34 [main] INFO  c.t.TwitterToKafkaServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2022-09-19 21:54:35 [main] INFO  c.t.TwitterToKafkaServiceApplication - Started TwitterToKafkaServiceApplication in 2.042 seconds (JVM running for 4.184)
+2022-09-19 22:01:28 [main] INFO  c.t.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication using Java 11.0.13 on DESKTOP-QFEC6PE with PID 2684 (F:\event-driven-micro-service\base-service\twitter-to-kafka-service\target\classes started by ACER in F:\event-driven-micro-service\base-service)
+2022-09-19 22:01:28 [main] INFO  c.t.TwitterToKafkaServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2022-09-19 22:01:29 [main] INFO  c.t.TwitterToKafkaServiceApplication - Started TwitterToKafkaServiceApplication in 1.959 seconds (JVM running for 4.137)
+2022-09-19 22:01:29 [main] INFO  c.t.TwitterToKafkaServiceApplication - initiating
+2022-09-19 22:01:29 [main] INFO  c.t.TwitterToKafkaServiceApplication - [Java, Microservices, Spring, Kafka, Elasticsearch]
+2022-09-19 22:14:53 [main] INFO  c.t.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication using Java 11.0.13 on DESKTOP-QFEC6PE with PID 2996 (F:\event-driven-micro-service\base-service\twitter-to-kafka-service\target\classes started by ACER in F:\event-driven-micro-service\base-service)
+2022-09-19 22:14:53 [main] INFO  c.t.TwitterToKafkaServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2022-09-19 22:14:55 [main] INFO  c.t.TwitterToKafkaServiceApplication - Started TwitterToKafkaServiceApplication in 2.068 seconds (JVM running for 4.322)
+2022-09-19 22:14:55 [main] INFO  c.t.TwitterToKafkaServiceApplication - initiating
+2022-09-19 22:14:55 [main] INFO  c.t.TwitterToKafkaServiceApplication - [Java, Microservices, Spring, Kafka, Elasticsearch]
+2022-09-19 22:14:55 [main] INFO  c.t.TwitterToKafkaServiceApplication - Hello There

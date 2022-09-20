@@ -1,0 +1,7 @@
+@Autowire vs Constructor Injection (constructor injections is preferred)
+    favours immutability & forces object creation with the injected object & no reflection & support multithreading
+
+Log levels
+    trace > debug > info > warn > error
+
+ 

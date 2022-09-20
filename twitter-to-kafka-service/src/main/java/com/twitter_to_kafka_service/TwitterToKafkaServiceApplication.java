@@ -41,5 +41,6 @@ public class TwitterToKafkaServiceApplication implements CommandLineRunner {
     public void run(String... args) throws Exception {
        LOG.info("initiating");
        LOG.info(String.valueOf(configData.getTwitterKeywords()));
+       LOG.info(configData.getWelcomeMessage());
     }
 }

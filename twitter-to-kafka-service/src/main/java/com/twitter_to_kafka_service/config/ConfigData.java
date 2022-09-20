@@ -11,4 +11,5 @@ import java.util.List;
 @Data //  this lombok annotation updates class with additional methods during compilation
 public class ConfigData {
     private List<String> twitterKeywords;
+    private String welcomeMessage;
 }
