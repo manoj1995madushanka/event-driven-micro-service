@@ -4,4 +4,9 @@
 Log levels
     trace > debug > info > warn > error
 
+for set up intellij global config variable execute below command
+    export TWITTER_BEARER_TOKEN = YOUR_BEARER_TOKEN
+
+
+
  
