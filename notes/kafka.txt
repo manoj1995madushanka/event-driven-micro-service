@@ -1,0 +1,78 @@
+Kafka Topic uses for holds data/ events
+Kafka Topics are immutable and append only
+Kafka is fast,resilient,scalable,high throughput
+Relies on file system for storing and caching messages
+Resilient and fault-tolerant by replication
+Kafka is fast because Relies on disk caching and memory mapped files instead of garbage collector eligible jvm memory
+Memory mapped file(faster than direct disk access) contains the contents of a file in virtual memory
+Page cache consist of physical pages in RAM corresponds to physical blocks on DISC
+Kafka naturally scale by partitions and ordered inside partition
+
+Kafka as an event store perfect match for event-driven microservice
+
+Kafka Topic consists of one or more partitions to hold data/events
+
+Kafka Producer
+    sends data to kafka cluster
+    thread safe for multi-treading
+
+The Producer has buffers of records per topic partition which are sized at batch.size property.
+the smaller the batch size less the throughput and if the batch size is too big, the memory will be wasted
+since that part of memory is allocated for batching. This is because the data will be sent before the batch size limit hits
+
+Using a larger batch.size makes compression more efficient and if a data is large than the batch size,
+it will not be batched
+
+Under heavy load, data will most probably be batched. However under light load data may not be batched.
+In that case increasing linger.ms (use to add a delay on producer for higher throughput) property can
+increase throughput by increasing batching with fewer request and with an increased latency on producer send
+
+The buffers are sent as fast as broker can keep up and this can be limited by max.in.flight.requests.per.connection
+property and if this sets to 1, any subsequent send request will wait the previous one return result
+
+max.in.flight.request.per.connection use to limit the request number on producer
+
+multiple broker nodes to achieve high availability and resiliency
+
+By default producer will wait all replicas to return result as the default value for acknowledge property is
+ack = all. By setting ack=1, only the broker that gets the request will send confirmation instead of waiting all
+in-sync replicas
+
+use ack = all for better resiliency
+use ack = 1 producer will wait confirmation ONLY from the target broker
+use ack = 0 No resiliency producer will not wait any confirmation
+
+The producer property compression.type allows to set compression on producer level. Default value is none.
+This setting can set to none,gzip,snappy or lz4. The compression is done by batch and improves with larger
+batch sizes
+
+end to end compression is also possible if the kafka broker config compression.type set to producer.
+then the compressed data will be sent from a producer then goes to the topic and returned to any
+consumer in the compressed format. this way compression only happens once and is reused by the broker and consumer
+
+The producer config property is request.timeout.ms defalt 30 seconds. It is a client property and cases the client
+to wait that much time for the server to respond to a request
+
+The producer config property retries causes to retry a request if producer does not get an ack
+from kafka broker. It defaults to 0.
+
+If retries>0 to preserve ordering set max.in.flight.requests.per.connection = 1
+
+The producer config property partitioner.class sets the partition strategy. By default partitioner.class
+is set to org.apache.kafka.clients.producer.internals.DefaultPartitioner
+
+Default Partitioning strategy
+    Round-Robin : send data to each partition equally in relational order
+
+Kafka Producer Properties
+    Key/Value serializer class
+    compressionType
+    acks
+    batchSize
+    lingerMs
+    requestTimeoutMs
+    retryCount
+
+
+
+
