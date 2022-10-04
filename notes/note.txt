@@ -7,6 +7,11 @@ Log levels
 for set up intellij global config variable execute below command
     export TWITTER_BEARER_TOKEN = YOUR_BEARER_TOKEN
 
+'oauth_access_token' => Access token
+'oauth_access_token_secret' => Access token secret
+'consumer_key' => API key
+'consumer_secret' => API secret
+
 
 
  
