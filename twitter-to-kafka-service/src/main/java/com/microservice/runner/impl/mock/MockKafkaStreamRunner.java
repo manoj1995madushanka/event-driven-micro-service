@@ -1,9 +1,9 @@
-package com.twitter_to_kafka_service.runner.impl.mock;
+package com.microservice.runner.impl.mock;
 
-import com.twitter_to_kafka_service.config.ConfigData;
-import com.twitter_to_kafka_service.exception.TwitterToKafkaServiceException;
-import com.twitter_to_kafka_service.listener.TwitterKafkaStatusListener;
-import com.twitter_to_kafka_service.runner.StreamRunner;
+import com.microservice.config.TwitterToKafkaServiceConfigData;
+import com.microservice.exception.TwitterToKafkaServiceException;
+import com.microservice.listener.TwitterKafkaStatusListener;
+import com.microservice.runner.StreamRunner;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
@@ -17,7 +17,6 @@ import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 import java.util.Locale;
 import java.util.Random;
-import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -30,7 +29,7 @@ import java.util.concurrent.ThreadLocalRandom;
 public class MockKafkaStreamRunner implements StreamRunner {
 
     private static final Logger LOG = LoggerFactory.getLogger(MockKafkaStreamRunner.class);
-    private final ConfigData configData;
+    private final TwitterToKafkaServiceConfigData configData;
     private final TwitterKafkaStatusListener twitterKafkaStatusListener;
     private static final Random RANDOM = new Random();
 
@@ -52,7 +51,7 @@ public class MockKafkaStreamRunner implements StreamRunner {
 
     private static final String TWITTER_STATUS_DATE_FORMAT = "EEE MMM dd HH:mm:ss zzz yyyy";
 
-    public MockKafkaStreamRunner(ConfigData configData, TwitterKafkaStatusListener twitterKafkaStatusListener) {
+    public MockKafkaStreamRunner(TwitterToKafkaServiceConfigData configData, TwitterKafkaStatusListener twitterKafkaStatusListener) {
         this.configData = configData;
         this.twitterKafkaStatusListener = twitterKafkaStatusListener;
     }

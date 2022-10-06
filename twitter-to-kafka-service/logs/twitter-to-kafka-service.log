@@ -1,78 +1,249 @@
-2022-10-02 09:52:18 [main] INFO  c.t.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication using Java 11.0.13 on DESKTOP-QFEC6PE with PID 11820 (F:\event-driven-micro-service\base-service\twitter-to-kafka-service\target\classes started by ACER in F:\event-driven-micro-service\base-service)
-2022-10-02 09:52:18 [main] INFO  c.t.TwitterToKafkaServiceApplication - No active profile set, falling back to 1 default profile: "default"
-2022-10-02 09:52:19 [main] INFO  c.t.TwitterToKafkaServiceApplication - Started TwitterToKafkaServiceApplication in 2.56 seconds (JVM running for 6.521)
-2022-10-02 09:52:19 [main] INFO  c.t.TwitterToKafkaServiceApplication - initiating
-2022-10-02 09:52:19 [main] INFO  c.t.TwitterToKafkaServiceApplication - [Java, Microservices, Spring, Kafka, Elasticsearch]
-2022-10-02 09:52:19 [main] INFO  c.t.TwitterToKafkaServiceApplication - Hello There
-2022-10-02 09:52:19 [main] INFO  c.t.r.i.TwitterV2KafkaStreamRunner - Created filter for twitter Stream for keywords: [Java, Microservices, Spring, Kafka, Elasticsearch]
-2022-10-02 09:52:21 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+2022-10-04 19:13:52 [main] INFO  c.t.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication using Java 11.0.13 on DESKTOP-QFEC6PE with PID 3352 (F:\event-driven-micro-service\base-service\twitter-to-kafka-service\target\classes started by ACER in F:\event-driven-micro-service\base-service)
+2022-10-04 19:13:52 [main] INFO  c.t.TwitterToKafkaServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2022-10-04 19:13:53 [main] WARN  o.s.c.a.AnnotationConfigApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'twitterToKafkaServiceApplication': Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.NoUniqueBeanDefinitionException: No qualifying bean of type 'com.microservice.runner.StreamRunner' available: expected single matching bean but found 2: twitterKafkaStreamRunner,mockKafkaStreamRunner
+2022-10-04 19:13:53 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
 
 Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2022-10-02 09:52:21 [main] ERROR o.s.boot.SpringApplication - Application run failed
-java.lang.IllegalStateException: Failed to execute CommandLineRunner
-	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:774)
-	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:755)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
-	at com.twitter_to_kafka_service.TwitterToKafkaServiceApplication.main(TwitterToKafkaServiceApplication.java:33)
-Caused by: org.json.JSONException: JSONObject["data"] not found.
-	at org.json.JSONObject.get(JSONObject.java:566)
-	at com.twitter_to_kafka_service.runner.impl.TwitterV2StreamHelper.getRules(TwitterV2StreamHelper.java:161)
-	at com.twitter_to_kafka_service.runner.impl.TwitterV2StreamHelper.setupRules(TwitterV2StreamHelper.java:109)
-	at com.twitter_to_kafka_service.runner.impl.TwitterV2KafkaStreamRunner.start(TwitterV2KafkaStreamRunner.java:36)
-	at com.twitter_to_kafka_service.TwitterToKafkaServiceApplication.run(TwitterToKafkaServiceApplication.java:49)
-	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:771)
-	... 5 common frames omitted
-2022-10-02 09:53:28 [main] INFO  c.t.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication using Java 11.0.13 on DESKTOP-QFEC6PE with PID 5772 (F:\event-driven-micro-service\base-service\twitter-to-kafka-service\target\classes started by ACER in F:\event-driven-micro-service\base-service)
-2022-10-02 09:53:29 [main] INFO  c.t.TwitterToKafkaServiceApplication - No active profile set, falling back to 1 default profile: "default"
-2022-10-02 09:53:30 [main] INFO  c.t.TwitterToKafkaServiceApplication - Started TwitterToKafkaServiceApplication in 2.219 seconds (JVM running for 6.32)
-2022-10-02 09:53:30 [main] INFO  c.t.TwitterToKafkaServiceApplication - initiating
-2022-10-02 09:53:30 [main] INFO  c.t.TwitterToKafkaServiceApplication - [Java, Microservices, Spring, Kafka, Elasticsearch]
-2022-10-02 09:53:30 [main] INFO  c.t.TwitterToKafkaServiceApplication - Hello There
-2022-10-02 09:53:30 [main] INFO  c.t.r.i.TwitterV2KafkaStreamRunner - Created filter for twitter Stream for keywords: [Java, Microservices, Spring, Kafka, Elasticsearch]
-2022-10-02 09:54:01 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+2022-10-04 19:13:53 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 1 of constructor in com.microservice.TwitterToKafkaServiceApplication required a single bean, but 2 were found:
+	- twitterKafkaStreamRunner: defined in file [F:\event-driven-micro-service\base-service\twitter-to-kafka-service\target\classes\com\twitter_to_kafka_service\runner\impl\TwitterKafkaStreamRunner.class]
+	- mockKafkaStreamRunner: defined in file [F:\event-driven-micro-service\base-service\twitter-to-kafka-service\target\classes\com\twitter_to_kafka_service\runner\impl\mock\MockKafkaStreamRunner.class]
+
+
+Action:
+
+Consider marking one of the beans as @Primary, updating the consumer to accept multiple beans, or using @Qualifier to identify the bean that should be consumed
+
+2022-10-04 19:14:33 [main] INFO  c.t.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication using Java 11.0.13 on DESKTOP-QFEC6PE with PID 13256 (F:\event-driven-micro-service\base-service\twitter-to-kafka-service\target\classes started by ACER in F:\event-driven-micro-service\base-service)
+2022-10-04 19:14:33 [main] INFO  c.t.TwitterToKafkaServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2022-10-04 19:14:34 [main] INFO  c.t.TwitterToKafkaServiceApplication - Started TwitterToKafkaServiceApplication in 1.514 seconds (JVM running for 3.182)
+2022-10-04 19:14:34 [main] INFO  c.t.TwitterToKafkaServiceApplication - initiating
+2022-10-04 19:14:34 [main] INFO  c.t.TwitterToKafkaServiceApplication - [Java, Microservices, Spring, Kafka, Elasticsearch]
+2022-10-04 19:14:34 [main] INFO  c.t.TwitterToKafkaServiceApplication - Hello There
+2022-10-04 19:14:34 [main] INFO  c.t.r.i.mock.MockKafkaStreamRunner - Starting mock filtering twitter streams for keywords [Java, Microservices, Spring, Kafka, Elasticsearch].
+2022-10-04 19:14:34 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text sgre aweg kdsxcbg reg reg erg aweg Kafka argwe erg erg reg test erg
+2022-10-04 19:14:35 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text test erg gxdqh erg rg aweg sgre aerg Java lorem agr43g agr43g test ag3ew4t rg
+2022-10-04 19:14:36 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text erg bereb reg bereb erg Elasticsearch erg agr43g erg ipsom
+2022-10-04 19:14:37 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text erg aweg gxdqh ipsom Spring gxdqh aweg
+2022-10-04 19:14:38 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text test gxdqh erg kdsxcbg agr43g Spring gxdqh hjgsah erg hjgsah
+2022-10-04 19:14:39 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text hjgsah reg rg kdsxcbg bereb erg erg lorem Spring reg ipsom bereb aweg bereb erg
+2022-10-04 19:14:40 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text ag3ew4t erg kdsxcbg erg Microservices argwe ag3ew4t aerg
+2022-10-04 19:14:41 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text kdsxcbg erg rg aerg lorem ipsom reg rg Elasticsearch erg sgre kdsxcbg reg erg kdsxcbg
+2022-10-04 19:14:42 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text agr43g ipsom lorem rg erg Kafka bereb bereb kdsxcbg reg
+2022-10-04 19:14:43 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text erg erg test reg agr43g aerg Java bereb test rg erg erg
+2022-10-04 19:14:44 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text agr43g agr43g erg erg reg erg argwe Spring ipsom aerg kdsxcbg argwe rg bereb
+2022-10-04 19:14:45 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text hjgsah aweg ag3ew4t reg sgre test Spring rg erg agr43g aweg
+2022-10-04 19:14:46 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text erg aerg sgre aweg test lorem Microservices lorem lorem erg lorem aweg
+2022-10-04 19:14:47 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text lorem aerg ag3ew4t test ipsom aerg kdsxcbg rg Elasticsearch aweg ipsom lorem lorem erg test
+2022-10-04 19:14:48 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text erg agr43g aweg gxdqh ag3ew4t argwe Java erg reg erg ag3ew4t
+2022-10-04 19:14:49 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text hjgsah lorem aerg hjgsah gxdqh reg erg Java erg ipsom ipsom ag3ew4t ag3ew4t gxdqh
+2022-10-04 19:14:50 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text agr43g erg erg gxdqh ipsom Spring kdsxcbg erg sgre aerg
+2022-10-04 19:14:51 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text sgre erg aweg test Kafka kdsxcbg erg agr43g
+2022-10-04 19:14:52 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text reg erg erg erg argwe aweg erg bereb Spring erg aerg ipsom lorem erg reg
+2022-10-04 19:14:53 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text kdsxcbg hjgsah rg erg aerg Spring agr43g bereb agr43g rg
+2022-10-04 19:14:54 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text gxdqh bereb sgre erg erg Elasticsearch test gxdqh aweg reg
+2022-10-04 19:14:55 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text bereb bereb argwe Kafka argwe aweg
+2022-10-04 19:14:56 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text erg reg argwe ipsom rg erg erg Spring lorem rg erg test hjgsah reg
+2022-10-04 19:14:58 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text erg agr43g ipsom erg bereb lorem ag3ew4t Kafka rg erg ag3ew4t test reg
+2022-10-04 19:14:59 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text lorem rg reg Kafka rg agr43g
+2022-10-04 19:15:00 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text hjgsah test erg reg test kdsxcbg argwe erg Java reg sgre aweg agr43g sgre agr43g kdsxcbg
+2022-10-04 19:15:01 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text ag3ew4t hjgsah test kdsxcbg argwe ag3ew4t test reg Java erg bereb aerg aerg erg reg agr43g
+2022-10-04 19:15:02 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text lorem test test Elasticsearch reg kdsxcbg
+2022-10-04 19:15:03 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text reg argwe aweg ag3ew4t agr43g bereb aerg agr43g Kafka aweg erg sgre ipsom rg argwe
+2022-10-04 19:15:04 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text erg rg erg Microservices argwe agr43g
+2022-10-04 19:15:05 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text gxdqh lorem kdsxcbg reg Elasticsearch aerg aweg bereb
+2022-10-04 19:15:06 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text argwe bereb test agr43g Java hjgsah erg aweg
+2022-10-04 19:15:07 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text test rg reg lorem aerg ipsom aerg Microservices aweg ipsom sgre rg sgre erg
+2022-10-04 19:15:08 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text erg gxdqh aerg rg reg ipsom Microservices ag3ew4t agr43g gxdqh kdsxcbg aerg
+2022-10-04 19:15:09 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text erg erg rg gxdqh kdsxcbg gxdqh erg lorem Java argwe ag3ew4t hjgsah agr43g erg ipsom reg
+2022-10-04 19:15:10 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text ipsom kdsxcbg rg ag3ew4t kdsxcbg rg Spring reg ag3ew4t agr43g aerg erg
+2022-10-04 19:15:11 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text argwe erg ipsom lorem bereb sgre erg erg Spring hjgsah agr43g argwe erg test ipsom agr43g
+2022-10-04 19:15:12 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text rg ag3ew4t test argwe argwe erg Spring hjgsah sgre rg erg sgre
+2022-10-04 19:15:13 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text aerg gxdqh agr43g agr43g argwe Java rg bereb reg
+2022-10-04 19:15:14 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text sgre aweg hjgsah erg test rg Spring erg lorem lorem ag3ew4t test
+2022-10-04 19:15:15 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text gxdqh sgre erg bereb argwe aerg erg erg Kafka argwe ag3ew4t gxdqh agr43g reg erg ipsom
+2022-10-04 19:15:16 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text bereb reg kdsxcbg erg agr43g Elasticsearch reg argwe reg
+2022-10-04 19:15:17 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text erg erg gxdqh gxdqh ipsom bereb Kafka erg argwe ipsom sgre agr43g
+2022-10-04 19:15:18 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text reg ipsom hjgsah Kafka lorem agr43g
+2022-10-04 19:15:19 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text rg erg rg hjgsah Kafka agr43g reg
+2022-10-04 19:15:20 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text erg erg aweg aweg Kafka erg erg rg
+2022-10-04 19:15:21 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text erg aweg erg ag3ew4t erg Spring test test reg test
+2022-10-04 19:15:22 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text rg erg erg kdsxcbg sgre ag3ew4t Microservices aweg ipsom erg argwe erg
+2022-10-04 19:15:23 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text erg hjgsah ipsom erg erg ag3ew4t gxdqh aerg Java ag3ew4t erg argwe ag3ew4t rg lorem hjgsah
+2022-10-04 19:15:24 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text ipsom ag3ew4t lorem erg kdsxcbg ipsom Elasticsearch ag3ew4t agr43g erg aerg
+2022-10-04 19:15:25 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text erg bereb aerg ag3ew4t erg test lorem erg Java aweg aweg erg reg bereb erg
+2022-10-04 19:15:26 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text sgre gxdqh lorem erg argwe lorem Spring erg agr43g erg aweg
+2022-10-04 19:15:27 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text reg gxdqh reg aweg sgre Elasticsearch kdsxcbg aerg sgre aweg
+2022-10-04 19:15:28 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text erg agr43g erg erg ag3ew4t erg agr43g lorem Spring sgre erg aweg aweg aerg test gxdqh
+2022-10-04 19:15:29 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text test erg bereb ipsom erg argwe kdsxcbg Microservices bereb erg kdsxcbg kdsxcbg test kdsxcbg
+2022-10-04 19:15:30 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text kdsxcbg rg ipsom Java test bereb
+2022-10-04 19:15:31 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text aweg erg rg aweg sgre aerg gxdqh agr43g Java aweg gxdqh aweg hjgsah erg agr43g ipsom
+2022-10-04 19:15:32 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text test hjgsah aerg erg aweg aerg aweg hjgsah Spring gxdqh gxdqh argwe erg test reg
+2022-10-04 19:15:33 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text test erg erg gxdqh erg argwe erg aerg Elasticsearch ipsom rg aerg argwe kdsxcbg lorem erg
+2022-10-04 19:15:34 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text lorem aerg reg agr43g aerg agr43g erg Java bereb erg test aerg argwe hjgsah
+2022-10-04 19:15:35 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text bereb aweg erg Java test erg
+2022-10-04 19:15:36 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text aerg aerg aerg test ag3ew4t aweg Spring ag3ew4t erg rg lorem
+2022-10-04 19:15:37 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text argwe reg bereb Spring kdsxcbg ipsom
+2022-10-04 19:15:38 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text erg reg erg lorem erg erg Spring aweg aerg hjgsah ipsom
+2022-10-04 19:15:39 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text erg sgre erg ipsom Elasticsearch ag3ew4t aerg agr43g
+2022-10-04 19:15:40 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text sgre reg aweg argwe Microservices ag3ew4t rg kdsxcbg
+2022-10-04 19:15:41 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text sgre aerg kdsxcbg hjgsah gxdqh erg rg sgre Kafka bereb erg argwe rg ipsom lorem
+2022-10-04 19:15:42 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text kdsxcbg bereb sgre rg aerg Elasticsearch bereb aerg sgre aweg
+2022-10-04 19:15:43 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text erg ipsom erg test ag3ew4t aweg Elasticsearch rg rg argwe gxdqh
+2022-10-04 19:15:44 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text agr43g erg test reg test Kafka bereb agr43g erg
+2022-10-04 19:15:45 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text erg erg agr43g aerg ipsom Java test hjgsah hjgsah
+2022-10-04 19:15:46 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text ipsom reg agr43g aerg test gxdqh kdsxcbg ag3ew4t Java lorem erg aerg erg argwe ipsom agr43g
+2022-10-04 19:15:47 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text gxdqh argwe hjgsah hjgsah bereb erg Java reg erg agr43g kdsxcbg test
+2022-10-04 19:15:48 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text sgre erg sgre argwe bereb kdsxcbg gxdqh bereb Spring kdsxcbg reg argwe erg argwe aerg ipsom
+2022-10-04 19:15:49 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text reg ipsom argwe test ipsom lorem Spring aerg erg bereb gxdqh
+2022-10-04 19:15:50 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text test rg argwe Microservices aerg ag3ew4t
+2022-10-04 19:15:51 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text hjgsah argwe reg aweg reg rg Kafka erg ipsom argwe kdsxcbg
+2022-10-04 19:15:52 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text ag3ew4t erg erg Spring hjgsah erg
+2022-10-04 19:15:53 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text kdsxcbg lorem lorem lorem reg Microservices kdsxcbg aerg agr43g rg
+2022-10-04 19:15:54 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text erg ipsom hjgsah gxdqh Kafka test erg
+2022-10-04 19:15:55 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text ipsom lorem hjgsah gxdqh test Microservices agr43g gxdqh gxdqh ag3ew4t
+2022-10-04 19:15:56 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text rg ag3ew4t lorem bereb agr43g Spring ipsom rg aweg test
+2022-10-04 19:15:57 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text sgre ag3ew4t ag3ew4t erg aweg aweg erg argwe Kafka hjgsah lorem reg agr43g erg erg erg
+2022-10-04 19:15:58 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text aweg agr43g sgre Spring erg reg
+2022-10-04 19:15:59 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text aerg argwe erg kdsxcbg erg test gxdqh Spring erg erg ag3ew4t agr43g sgre ipsom
+2022-10-04 19:16:00 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text rg erg gxdqh agr43g kdsxcbg test lorem rg Elasticsearch reg erg erg rg erg erg
+2022-10-04 19:16:01 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text aweg bereb lorem erg kdsxcbg Spring kdsxcbg lorem aerg test
+2022-10-04 19:16:02 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text test rg sgre aweg Spring ipsom agr43g
+2022-10-04 19:16:03 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text ag3ew4t argwe kdsxcbg Elasticsearch erg erg
+2022-10-04 19:16:04 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text erg bereb bereb erg erg Spring erg kdsxcbg erg erg
+2022-10-04 19:16:05 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text erg erg sgre erg erg Elasticsearch agr43g argwe sgre erg
+2022-10-04 19:16:06 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text erg sgre erg test lorem Elasticsearch test hjgsah gxdqh bereb
+2022-10-04 19:16:07 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text erg ag3ew4t reg test kdsxcbg ag3ew4t ag3ew4t agr43g Microservices lorem ag3ew4t erg aerg bereb ipsom
+2022-10-04 19:16:08 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text agr43g kdsxcbg erg aerg Spring erg bereb aerg
+2022-10-04 19:16:09 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text agr43g kdsxcbg aweg lorem reg agr43g aerg ag3ew4t Elasticsearch erg lorem erg argwe argwe argwe bereb
+2022-10-04 19:16:10 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text erg agr43g ipsom agr43g aerg erg erg Spring reg gxdqh aerg erg argwe
+2022-10-04 19:16:11 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text sgre aerg gxdqh lorem agr43g rg Elasticsearch lorem erg sgre bereb aweg
+2022-10-04 19:16:12 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text test aweg aweg sgre bereb aerg aweg Elasticsearch erg hjgsah gxdqh gxdqh ag3ew4t agr43g
+2022-10-04 19:16:13 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text gxdqh erg argwe aerg aerg aerg erg Kafka aerg aerg erg aerg erg
+2022-10-04 19:16:14 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text ipsom erg reg reg argwe erg aerg Elasticsearch reg sgre erg erg lorem aerg
+2022-10-04 19:16:15 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text gxdqh lorem reg erg Spring gxdqh test
+2022-10-04 19:16:16 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text reg erg aerg erg erg test Kafka ag3ew4t aweg ag3ew4t erg
+2022-10-04 19:16:17 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text ipsom ag3ew4t sgre bereb erg erg gxdqh erg Java ipsom rg gxdqh lorem test lorem erg
+2022-10-04 19:16:18 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text gxdqh ipsom gxdqh argwe Microservices kdsxcbg erg hjgsah
+2022-10-04 19:16:19 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text bereb lorem hjgsah argwe rg hjgsah ipsom Spring argwe lorem rg argwe lorem sgre
+2022-10-04 19:16:20 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text kdsxcbg argwe agr43g erg reg Microservices test ipsom erg
+2022-10-04 19:16:21 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text reg kdsxcbg erg erg Microservices ag3ew4t lorem reg
+2022-10-04 19:16:22 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text ag3ew4t kdsxcbg ipsom sgre rg sgre aerg Elasticsearch erg kdsxcbg aerg bereb erg
+2022-10-04 19:16:23 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text rg erg sgre aweg argwe Kafka agr43g erg erg argwe
+2022-10-04 19:16:24 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text agr43g aweg erg erg kdsxcbg gxdqh erg reg Microservices lorem ag3ew4t aerg ag3ew4t lorem rg
+2022-10-04 19:16:25 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text gxdqh gxdqh sgre erg bereb gxdqh bereb test Elasticsearch ipsom argwe bereb bereb lorem argwe
+2022-10-04 19:16:26 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text agr43g gxdqh gxdqh rg sgre Elasticsearch test erg lorem
+2022-10-04 19:16:27 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text rg hjgsah erg kdsxcbg lorem reg rg erg Spring argwe erg lorem ipsom gxdqh ag3ew4t
+2022-10-04 19:16:28 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text sgre erg sgre kdsxcbg lorem Microservices erg sgre ag3ew4t hjgsah
+2022-10-04 19:16:29 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text bereb erg ipsom gxdqh test sgre kdsxcbg erg Microservices gxdqh reg agr43g gxdqh erg agr43g
+2022-10-04 19:16:30 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text gxdqh bereb ag3ew4t agr43g hjgsah Java lorem test reg kdsxcbg
+2022-10-04 19:16:31 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text rg hjgsah rg Kafka erg lorem
+2022-10-04 19:16:32 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text reg erg kdsxcbg kdsxcbg lorem argwe argwe reg Elasticsearch aweg reg kdsxcbg aweg ag3ew4t sgre argwe
+2022-10-04 19:16:33 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text argwe lorem agr43g bereb Elasticsearch aweg bereb aerg
+2022-10-04 19:16:34 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text kdsxcbg test erg lorem bereb erg ipsom lorem Elasticsearch ipsom erg ag3ew4t gxdqh test erg agr43g
+2022-10-04 19:16:35 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text erg ipsom bereb lorem Microservices bereb argwe kdsxcbg
+2022-10-04 19:16:36 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text argwe kdsxcbg agr43g lorem Java erg gxdqh
+2022-10-04 19:16:37 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text ipsom agr43g erg rg erg erg Kafka erg erg aerg kdsxcbg bereb
+2022-10-04 19:16:38 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text argwe test sgre ag3ew4t ipsom test Spring agr43g aerg rg rg hjgsah
+2022-10-04 19:16:40 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text erg test sgre erg Microservices ipsom bereb erg
+2022-10-04 19:16:41 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text kdsxcbg bereb argwe bereb ipsom gxdqh rg aweg Microservices aerg lorem reg erg erg ipsom sgre
+2022-10-04 19:16:42 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text erg gxdqh erg Java kdsxcbg aweg
+2022-10-04 19:16:43 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text ipsom erg rg reg gxdqh erg bereb Kafka reg erg aerg hjgsah sgre
+2022-10-04 19:16:44 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text ipsom erg agr43g erg aerg argwe lorem bereb Java hjgsah rg argwe hjgsah aerg gxdqh
+2022-10-04 19:16:45 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text hjgsah bereb hjgsah agr43g sgre sgre Elasticsearch kdsxcbg aerg rg erg sgre
+2022-10-04 19:16:46 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text ag3ew4t aerg rg sgre kdsxcbg erg aweg Kafka gxdqh erg agr43g reg ag3ew4t aweg
+2022-10-04 19:16:47 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text reg erg agr43g erg test Spring sgre rg aerg
+2022-10-04 19:16:48 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text rg test argwe argwe bereb bereb bereb argwe Microservices test argwe sgre aweg test ipsom
+2022-10-04 19:16:49 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text ipsom gxdqh argwe agr43g erg lorem test lorem Kafka erg agr43g ag3ew4t aweg kdsxcbg agr43g
+2022-10-04 19:16:50 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text sgre ag3ew4t rg hjgsah ag3ew4t agr43g agr43g ipsom Kafka argwe erg lorem ipsom ag3ew4t test bereb
+2022-10-04 19:16:51 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text agr43g argwe bereb ipsom Kafka erg test erg
+2022-10-04 19:16:52 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text lorem argwe reg ag3ew4t lorem sgre Microservices kdsxcbg test lorem argwe erg
+2022-10-04 19:16:53 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text reg bereb erg agr43g Microservices erg ipsom
+2022-10-04 19:16:54 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text erg hjgsah argwe erg erg bereb kdsxcbg ag3ew4t Elasticsearch erg hjgsah argwe reg erg reg
+2022-10-04 19:16:55 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text reg sgre erg ag3ew4t bereb erg Elasticsearch erg erg test kdsxcbg
+2022-10-04 19:16:56 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text erg aweg erg rg ipsom gxdqh hjgsah Kafka lorem gxdqh gxdqh erg kdsxcbg
+2022-10-04 19:16:57 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text erg lorem erg test aweg hjgsah Spring erg erg reg gxdqh
+2022-10-04 19:16:58 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text erg ipsom erg ag3ew4t erg hjgsah argwe gxdqh Spring reg erg sgre reg gxdqh hjgsah ag3ew4t
+2022-10-04 19:16:59 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text sgre test erg ag3ew4t ipsom gxdqh Microservices gxdqh lorem erg ag3ew4t erg
+2022-10-04 19:17:00 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text test bereb reg gxdqh erg Microservices ag3ew4t agr43g argwe
+2022-10-04 19:17:01 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text lorem test sgre gxdqh sgre Elasticsearch rg kdsxcbg aweg
+2022-10-04 19:17:02 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text gxdqh gxdqh bereb erg gxdqh bereb erg argwe Kafka ag3ew4t bereb bereb ag3ew4t aweg agr43g rg
+2022-10-04 19:17:03 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text reg ag3ew4t reg rg kdsxcbg aweg Kafka erg test hjgsah sgre erg
+2022-10-04 19:17:04 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text reg bereb sgre kdsxcbg sgre erg aerg aerg Microservices erg erg reg erg erg agr43g erg
+2022-10-04 19:17:05 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text erg erg sgre test erg Java erg reg ipsom lorem
+2022-10-04 19:17:06 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text erg erg erg kdsxcbg Kafka reg reg sgre
+2022-10-04 19:17:07 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text sgre kdsxcbg argwe agr43g argwe gxdqh Microservices erg argwe argwe sgre kdsxcbg
+2022-10-04 19:17:08 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text hjgsah aweg test reg Microservices erg aweg
+2022-10-04 19:17:09 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text sgre argwe aerg test aweg erg erg Spring rg reg bereb sgre erg
+2022-10-04 19:17:10 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text aweg aweg sgre gxdqh Spring erg ag3ew4t erg
+2022-10-04 19:17:11 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text argwe test sgre argwe erg aweg erg Java bereb hjgsah kdsxcbg ag3ew4t kdsxcbg
+2022-10-04 19:17:12 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text bereb ag3ew4t bereb Kafka agr43g kdsxcbg
+2022-10-04 19:17:13 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text sgre hjgsah erg test rg gxdqh Elasticsearch aerg hjgsah argwe sgre sgre
+2022-10-04 19:17:14 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text test ag3ew4t sgre lorem Java lorem erg kdsxcbg
+2022-10-04 19:17:15 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text gxdqh reg gxdqh test Java ag3ew4t kdsxcbg bereb
+2022-10-04 19:17:16 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text aweg rg reg Elasticsearch reg test
+2022-10-04 19:17:17 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text kdsxcbg ipsom reg ag3ew4t Kafka ipsom argwe kdsxcbg
+2022-10-04 19:17:18 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text erg kdsxcbg argwe ipsom lorem test sgre Microservices reg aerg argwe erg bereb erg
+2022-10-04 19:17:19 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text gxdqh rg ag3ew4t erg erg aerg Spring lorem argwe test kdsxcbg
+2022-10-04 19:17:20 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text rg rg aerg erg erg Microservices reg kdsxcbg bereb
+2022-10-04 19:17:21 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text erg bereb rg hjgsah lorem erg test Kafka hjgsah ipsom hjgsah rg hjgsah
+2022-10-04 19:17:22 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text test aweg aweg gxdqh aweg rg agr43g erg Microservices argwe sgre sgre aweg ag3ew4t hjgsah erg
+2022-10-04 19:17:23 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text agr43g ipsom reg Kafka test agr43g
+2022-10-04 19:17:24 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text sgre ag3ew4t bereb kdsxcbg hjgsah aweg test argwe Microservices aweg argwe aweg erg argwe erg rg
+2022-10-04 19:17:25 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text sgre kdsxcbg ipsom erg lorem reg agr43g erg Spring argwe aweg aerg aerg kdsxcbg sgre argwe
+2022-10-04 19:17:26 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text reg aerg erg sgre erg rg erg Kafka ipsom hjgsah reg aerg gxdqh
+2022-10-04 19:17:27 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text erg ag3ew4t erg sgre Elasticsearch sgre sgre
+2022-10-04 19:17:28 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text aweg rg erg sgre bereb Elasticsearch reg test erg
+2022-10-04 19:17:29 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text kdsxcbg gxdqh agr43g sgre erg test agr43g Microservices agr43g argwe erg ag3ew4t reg hjgsah
+2022-10-04 19:17:30 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text lorem sgre ipsom argwe Kafka agr43g reg argwe
+2022-10-04 19:17:31 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text argwe hjgsah erg lorem Kafka ag3ew4t erg lorem
+2022-10-04 19:17:32 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text erg ag3ew4t aerg erg Microservices erg reg
+2022-10-04 20:20:09 [main] INFO  c.t.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication using Java 11.0.13 on DESKTOP-QFEC6PE with PID 10128 (F:\event-driven-micro-service\base-service\twitter-to-kafka-service\target\classes started by ACER in F:\event-driven-micro-service\base-service)
+2022-10-04 20:20:09 [main] INFO  c.t.TwitterToKafkaServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2022-10-04 20:20:10 [main] WARN  o.s.c.a.AnnotationConfigApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'twitterToKafkaServiceApplication': Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.NoUniqueBeanDefinitionException: No qualifying bean of type 'com.microservice.runner.StreamRunner' available: expected single matching bean but found 2: twitterKafkaStreamRunner,mockKafkaStreamRunner
+2022-10-04 20:20:10 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
 
 Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2022-10-02 09:54:01 [main] ERROR o.s.boot.SpringApplication - Application run failed
-java.lang.IllegalStateException: Failed to execute CommandLineRunner
-	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:774)
-	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:755)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
-	at com.twitter_to_kafka_service.TwitterToKafkaServiceApplication.main(TwitterToKafkaServiceApplication.java:33)
-Caused by: org.json.JSONException: JSONObject["data"] not found.
-	at org.json.JSONObject.get(JSONObject.java:566)
-	at com.twitter_to_kafka_service.runner.impl.TwitterV2StreamHelper.getRules(TwitterV2StreamHelper.java:161)
-	at com.twitter_to_kafka_service.runner.impl.TwitterV2StreamHelper.setupRules(TwitterV2StreamHelper.java:109)
-	at com.twitter_to_kafka_service.runner.impl.TwitterV2KafkaStreamRunner.start(TwitterV2KafkaStreamRunner.java:36)
-	at com.twitter_to_kafka_service.TwitterToKafkaServiceApplication.run(TwitterToKafkaServiceApplication.java:49)
-	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:771)
-	... 5 common frames omitted
-2022-10-02 09:56:51 [main] INFO  c.t.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication using Java 11.0.13 on DESKTOP-QFEC6PE with PID 8472 (F:\event-driven-micro-service\base-service\twitter-to-kafka-service\target\classes started by ACER in F:\event-driven-micro-service\base-service)
-2022-10-02 09:56:51 [main] INFO  c.t.TwitterToKafkaServiceApplication - No active profile set, falling back to 1 default profile: "default"
-2022-10-02 09:56:52 [main] INFO  c.t.TwitterToKafkaServiceApplication - Started TwitterToKafkaServiceApplication in 2.431 seconds (JVM running for 5.105)
-2022-10-02 09:56:52 [main] INFO  c.t.TwitterToKafkaServiceApplication - initiating
-2022-10-02 09:56:52 [main] INFO  c.t.TwitterToKafkaServiceApplication - [Java, Microservices, Spring, Kafka, Elasticsearch]
-2022-10-02 09:56:52 [main] INFO  c.t.TwitterToKafkaServiceApplication - Hello There
-2022-10-02 09:56:52 [main] INFO  c.t.r.i.TwitterV2KafkaStreamRunner - Created filter for twitter Stream for keywords: [Java, Microservices, Spring, Kafka, Elasticsearch]
-2022-10-02 10:05:40 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+2022-10-04 20:20:10 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
 
-Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2022-10-02 10:05:40 [main] ERROR o.s.boot.SpringApplication - Application run failed
-java.lang.IllegalStateException: Failed to execute CommandLineRunner
-	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:774)
-	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:755)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
-	at com.twitter_to_kafka_service.TwitterToKafkaServiceApplication.main(TwitterToKafkaServiceApplication.java:33)
-Caused by: org.json.JSONException: JSONObject["data"] not found.
-	at org.json.JSONObject.get(JSONObject.java:566)
-	at com.twitter_to_kafka_service.runner.impl.TwitterV2StreamHelper.getRules(TwitterV2StreamHelper.java:161)
-	at com.twitter_to_kafka_service.runner.impl.TwitterV2StreamHelper.setupRules(TwitterV2StreamHelper.java:109)
-	at com.twitter_to_kafka_service.runner.impl.TwitterV2KafkaStreamRunner.start(TwitterV2KafkaStreamRunner.java:36)
-	at com.twitter_to_kafka_service.TwitterToKafkaServiceApplication.run(TwitterToKafkaServiceApplication.java:49)
-	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:771)
-	... 5 common frames omitted
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 1 of constructor in com.microservice.TwitterToKafkaServiceApplication required a single bean, but 2 were found:
+	- twitterKafkaStreamRunner: defined in file [F:\event-driven-micro-service\base-service\twitter-to-kafka-service\target\classes\com\twitter_to_kafka_service\runner\impl\TwitterKafkaStreamRunner.class]
+	- mockKafkaStreamRunner: defined in file [F:\event-driven-micro-service\base-service\twitter-to-kafka-service\target\classes\com\twitter_to_kafka_service\runner\impl\mock\MockKafkaStreamRunner.class]
+
+
+Action:
+
+Consider marking one of the beans as @Primary, updating the consumer to accept multiple beans, or using @Qualifier to identify the bean that should be consumed
+
+2022-10-04 20:20:30 [main] INFO  c.t.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication using Java 11.0.13 on DESKTOP-QFEC6PE with PID 14940 (F:\event-driven-micro-service\base-service\twitter-to-kafka-service\target\classes started by ACER in F:\event-driven-micro-service\base-service)
+2022-10-04 20:20:30 [main] INFO  c.t.TwitterToKafkaServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2022-10-04 20:20:31 [main] INFO  c.t.TwitterToKafkaServiceApplication - Started TwitterToKafkaServiceApplication in 1.629 seconds (JVM running for 3.344)
+2022-10-04 20:20:31 [main] INFO  c.t.TwitterToKafkaServiceApplication - initiating
+2022-10-04 20:20:31 [main] INFO  c.t.TwitterToKafkaServiceApplication - [Java, Microservices, Spring, Kafka, Elasticsearch]
+2022-10-04 20:20:31 [main] INFO  c.t.TwitterToKafkaServiceApplication - Hello There
+2022-10-04 20:20:31 [main] INFO  c.t.r.i.mock.MockKafkaStreamRunner - Starting mock filtering twitter streams for keywords [Java, Microservices, Spring, Kafka, Elasticsearch].
+2022-10-04 20:20:32 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text aerg erg ag3ew4t ipsom erg erg test test Java ag3ew4t erg agr43g kdsxcbg aerg argwe
+2022-10-04 20:20:33 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text rg aerg ag3ew4t erg erg rg Kafka erg aweg rg rg rg
+2022-10-04 20:20:34 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text lorem lorem erg rg erg Java ag3ew4t bereb sgre
+2022-10-04 20:20:35 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text bereb erg sgre test ipsom ag3ew4t erg Microservices aweg hjgsah kdsxcbg hjgsah kdsxcbg hjgsah
+2022-10-04 20:20:36 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text kdsxcbg bereb reg aerg argwe erg sgre Spring sgre erg ipsom agr43g ipsom
+2022-10-04 20:20:37 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text erg agr43g reg hjgsah Java agr43g lorem
+2022-10-04 20:20:38 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text aerg test erg aerg erg test bereb Kafka bereb agr43g ipsom erg test aerg
+2022-10-04 20:20:39 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text bereb erg ag3ew4t Kafka lorem erg
+2022-10-04 20:20:40 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text sgre erg erg gxdqh test Kafka erg erg agr43g
+2022-10-04 20:20:41 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text erg aweg lorem agr43g argwe Java aweg erg kdsxcbg
+2022-10-04 20:20:42 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text agr43g reg erg rg Java aerg sgre
+2022-10-04 20:20:43 [pool-1-thread-1] INFO  c.t.l.TwitterKafkaStatusListener - Twitter status with text ag3ew4t rg erg test Elasticsearch rg gxdqh sgre

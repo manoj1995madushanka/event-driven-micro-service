@@ -1,11 +1,10 @@
-package com.twitter_to_kafka_service.runner.impl;
+package com.microservice.runner.impl;
 
-import com.twitter_to_kafka_service.config.ConfigData;
-import com.twitter_to_kafka_service.listener.TwitterKafkaStatusListener;
-import com.twitter_to_kafka_service.runner.StreamRunner;
+import com.microservice.config.TwitterToKafkaServiceConfigData;
+import com.microservice.listener.TwitterKafkaStatusListener;
+import com.microservice.runner.StreamRunner;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnExpression;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Component;
 import twitter4j.FilterQuery;
@@ -22,11 +21,11 @@ import java.util.Arrays;
 public class TwitterKafkaStreamRunner implements StreamRunner {
     private static final Logger LOG = LoggerFactory.getLogger(TwitterKafkaStreamRunner.class);
 
-    private final ConfigData twitterToKafkaConfigData;
+    private final TwitterToKafkaServiceConfigData twitterToKafkaConfigData;
     private final TwitterKafkaStatusListener twitterKafkaStatusListener;
     private TwitterStream twitterStream;
 
-    public TwitterKafkaStreamRunner(ConfigData twitterToKafkaConfigData,
+    public TwitterKafkaStreamRunner(TwitterToKafkaServiceConfigData twitterToKafkaConfigData,
                                     TwitterKafkaStatusListener twitterKafkaStatusListener) {
         this.twitterToKafkaConfigData = twitterToKafkaConfigData;
         this.twitterKafkaStatusListener = twitterKafkaStatusListener;

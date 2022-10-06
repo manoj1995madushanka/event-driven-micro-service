@@ -1,7 +1,7 @@
-package com.twitter_to_kafka_service.runner.impl;
+package com.microservice.runner.impl;
 
-import com.twitter_to_kafka_service.config.ConfigData;
-import com.twitter_to_kafka_service.listener.TwitterKafkaStatusListener;
+import com.microservice.config.TwitterToKafkaServiceConfigData;
+import com.microservice.listener.TwitterKafkaStatusListener;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -19,7 +19,6 @@ import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnExpression;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Component;
 import twitter4j.Status;
 import twitter4j.TwitterException;
@@ -36,7 +35,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
-import java.util.concurrent.ThreadLocalRandom;
 
 @Component
 @ConditionalOnExpression("${twitter-to-kafka-service.enable-v2-tweets} " +
@@ -45,7 +43,7 @@ public class TwitterV2StreamHelper {
 
     private static final Logger LOG = LoggerFactory.getLogger(TwitterV2StreamHelper.class);
 
-    private final ConfigData configData;
+    private final TwitterToKafkaServiceConfigData configData;
 
     private final TwitterKafkaStatusListener twitterKafkaStatusListener;
 
@@ -58,7 +56,7 @@ public class TwitterV2StreamHelper {
 
     private static final String TWITTER_STATUS_DATE_FORMAT = "EEE MMM dd HH:mm:ss zzz yyyy";
 
-    public TwitterV2StreamHelper(ConfigData configData,
+    public TwitterV2StreamHelper(TwitterToKafkaServiceConfigData configData,
                                  TwitterKafkaStatusListener twitterKafkaStatusListener) {
         this.configData = configData;
         this.twitterKafkaStatusListener = twitterKafkaStatusListener;

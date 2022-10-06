@@ -1,7 +1,7 @@
-package com.twitter_to_kafka_service.runner.impl;
+package com.microservice.runner.impl;
 
-import com.twitter_to_kafka_service.config.ConfigData;
-import com.twitter_to_kafka_service.runner.StreamRunner;
+import com.microservice.config.TwitterToKafkaServiceConfigData;
+import com.microservice.runner.StreamRunner;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnExpression;
@@ -19,10 +19,10 @@ public class TwitterV2KafkaStreamRunner implements StreamRunner {
 
     private static final Logger LOG = LoggerFactory.getLogger(TwitterV2KafkaStreamRunner.class);
 
-    private final ConfigData configData;
+    private final TwitterToKafkaServiceConfigData configData;
     private final TwitterV2StreamHelper twitterV2StreamHelper;
 
-    public TwitterV2KafkaStreamRunner(ConfigData configData, TwitterV2StreamHelper twitterV2StreamHelper) {
+    public TwitterV2KafkaStreamRunner(TwitterToKafkaServiceConfigData configData, TwitterV2StreamHelper twitterV2StreamHelper) {
         this.configData = configData;
         this.twitterV2StreamHelper = twitterV2StreamHelper;
     }

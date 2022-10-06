@@ -1,14 +1,12 @@
-package com.twitter_to_kafka_service;
+package com.microservice;
 
-import com.twitter_to_kafka_service.config.ConfigData;
-import com.twitter_to_kafka_service.runner.StreamRunner;
+import com.microservice.config.ConfigData;
+import com.microservice.runner.StreamRunner;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-import java.util.Arrays;
 
 /*
 application initialization logics
