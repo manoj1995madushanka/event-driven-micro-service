@@ -7,7 +7,8 @@ import org.springframework.context.annotation.Configuration;
 import java.util.List;
 
 @Configuration
-@ConfigurationProperties(prefix = "twitter-to-kafka-service")
+@ConfigurationProperties(prefix = "twitter-to-kafka-service")// these properties will get from
+// twitter-to-kafka-service properties file
 @Data //  this lombok annotation updates class with additional methods during compilation
 public class TwitterToKafkaServiceConfigData {
     private List<String> twitterKeywords;
