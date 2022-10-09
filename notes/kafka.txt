@@ -73,6 +73,18 @@ Kafka Producer Properties
     requestTimeoutMs
     retryCount
 
+Zookeper:
+    organization of kafka cluster, health and leader election
+
+Quorum:
+    set the minimum number of brokers to create a network - prevent split brain
+
+Run a compose file:
+    docker-compose -f FILE_NAME up
+    eg: docker-compose -f common.yml -f kafka_cluster.yml up
+
+Inspect running containers:
+    docker ps
 
 
 

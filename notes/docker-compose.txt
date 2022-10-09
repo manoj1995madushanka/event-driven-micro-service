@@ -1,0 +1,10 @@
+common.yml
+    contain common network driver type
+    bridge network creates a network to connect with hostnames
+    if we do not mention bridge network the default network will create
+    In default network containers access each other using IP address
+    In bride network containers access each other using host names
+
+.env file
+    we define versions of images
+    service_version should match with project version
