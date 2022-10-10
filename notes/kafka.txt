@@ -86,5 +86,10 @@ Run a compose file:
 Inspect running containers:
     docker ps
 
+to start kafkacat docker image run command
+    docker run -it --network=host confluentinc/cp-kafkacat kafkacat -L -b localhost:19092
+
+show list of kafka brokers
+    kafkacat -L -b localhost:19092
 
 

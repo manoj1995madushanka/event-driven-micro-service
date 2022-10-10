@@ -1,0 +1,8 @@
+kafkacat is a commandline tool for interacting with Kafka brokers
+we can install docker image of kafkacat below url:
+    https://hub.docker.com/r/confluentinc/cp-kafkacat
+
+to start kafkacat docker image run command
+    docker run -it --network=host confluentinc/cp-kafkacat kafkacat -L -b localhost:19092
+
+
