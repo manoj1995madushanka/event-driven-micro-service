@@ -41,6 +41,7 @@
         <lombok.version>1.18.16</lombok.version>
         <spring-web.version>5.3.23</spring-web.version>
         <json.version>20180813</json.version>
+        <avro.version>1.10.0</avro.version>
     </properties>
 
     <dependencyManagement>
@@ -101,6 +102,12 @@
                 <groupId>org.json</groupId>
                 <artifactId>json</artifactId>
                 <version>${json.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.avro</groupId>
+                <artifactId>avro</artifactId>
+                <version>${avro.version}</version>
             </dependency>
 
         </dependencies>
