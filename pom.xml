@@ -42,6 +42,7 @@
         <spring-web.version>5.3.23</spring-web.version>
         <json.version>20180813</json.version>
         <avro.version>1.10.0</avro.version>
+        <spring-kafka.version>2.6.2</spring-kafka.version>
     </properties>
 
     <dependencyManagement>
@@ -104,10 +105,18 @@
                 <version>${json.version}</version>
             </dependency>
 
+            <!--Avro dependency-->
             <dependency>
                 <groupId>org.apache.avro</groupId>
                 <artifactId>avro</artifactId>
                 <version>${avro.version}</version>
+            </dependency>
+
+            <!--spring kafka dependency-->
+            <dependency>
+                <groupId>org.springframework.kafka</groupId>
+                <artifactId>spring-kafka</artifactId>
+                <version>${spring-kafka.version}</version>
             </dependency>
 
         </dependencies>
