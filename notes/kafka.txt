@@ -92,4 +92,25 @@ to start kafkacat docker image run command
 show list of kafka brokers
     kafkacat -L -b localhost:19092
 
+==========================================================
+
+kafka-model
+    create and hold java objects for kafka in Avro format
+    Avro is a strict schema and efficient byte serialization
+    In Avro no need to keep names on a json
+    It also has direct mapping from json
+    It is more faster for data communication due to above two condition
+    Avro-maven-plugin create java classes from avro schema file
+
+kafka-admin
+    create and verify kafka topics programmatically
+
+kafka-producer
+    use spring-kafka to write kafka producer implementation
+
+When we clean and build kafka-model module the java class will generate in src folder as
+avro definition file in resource folder
+
+
+
 
