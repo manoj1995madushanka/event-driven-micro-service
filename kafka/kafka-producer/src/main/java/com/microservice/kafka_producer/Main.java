@@ -1,4 +1,4 @@
-package com.event-driven;
+package com.microservice.kafka_producer-driven;
 
 public class Main {
     public static void main(String[] args) {
