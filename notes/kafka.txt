@@ -111,6 +111,8 @@ kafka-producer
 When we clean and build kafka-model module the java class will generate in src folder as
 avro definition file in resource folder
 
+Spring-Retry dependency helps to automatically retry a failed operation
+for use this retry functionality commonly I added this config to the common-config module
 
 
 
