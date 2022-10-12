@@ -52,7 +52,12 @@
             <dependency>
                 <groupId>com.event-driven</groupId>
                 <artifactId>app-config-data</artifactId>
-                <version>0.0.1-SNAPSHOT</version>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.event-driven</groupId>
+                <artifactId>common-config</artifactId>
+                <version>${project.version}</version>
             </dependency>
 
             <dependency>
