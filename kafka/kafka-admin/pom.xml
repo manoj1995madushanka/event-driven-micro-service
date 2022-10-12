@@ -22,6 +22,8 @@
             <groupId>com.event-driven</groupId>
             <artifactId>app-config-data</artifactId>
         </dependency>
+        <!--this dependency needed to create kafka topics automatically and need
+        to check topics are created and those are ready to use-->
         <dependency>
             <groupId>org.springframework.kafka</groupId>
             <artifactId>spring-kafka</artifactId>
