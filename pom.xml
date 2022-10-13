@@ -85,6 +85,12 @@
                     </exclusion>
                 </exclusions>
             </dependency>
+            <!--used to make http calls-->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-webflux</artifactId>
+                <version>${spring-boot.version}</version>
+            </dependency>
 
             <!-- https://mvnrepository.com/artifact/org.twitter4j/twitter4j-stream -->
             <dependency>
