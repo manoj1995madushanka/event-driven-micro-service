@@ -7,12 +7,15 @@ import org.apache.kafka.clients.admin.AdminClient;
 import org.apache.kafka.clients.admin.CreateTopicsResult;
 import org.apache.kafka.clients.admin.NewTopic;
 import org.apache.kafka.clients.admin.TopicListing;
-import org.apache.kafka.common.internals.Topic;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.HttpStatus;
 import org.springframework.retry.RetryContext;
 import org.springframework.retry.support.RetryTemplate;
 import org.springframework.stereotype.Component;
+import org.springframework.web.reactive.function.client.ClientResponse;
+import org.springframework.web.reactive.function.client.WebClient;
 
 import java.util.Collection;
 import java.util.List;
@@ -28,13 +31,15 @@ public class KafkaAdminClient {
     private final RetryConfigData retryConfigData;
     private final AdminClient adminClient;
     private final RetryTemplate retryTemplate;
+    private final WebClient webClient;
 
     public KafkaAdminClient(KafkaConfigData kafkaConfigData, RetryConfigData retryConfigData,
-                            AdminClient adminClient, RetryTemplate retryTemplate) {
+                            AdminClient adminClient, RetryTemplate retryTemplate, WebClient webClient) {
         this.kafkaConfigData = kafkaConfigData;
         this.retryConfigData = retryConfigData;
         this.adminClient = adminClient;
         this.retryTemplate = retryTemplate;
+        this.webClient = webClient;
     }
 
     public void createTopics() {
@@ -45,6 +50,30 @@ public class KafkaAdminClient {
             throw new KafkaClientException("Reached max number of retry for creating kafka topics", t);
         }
         checkTopicsCreated();
+    }
+
+    public void checkSchemaRegistry(){
+        int retryCount=1;
+        Integer maxRetry = retryConfigData.getMaxAttempts();
+        Integer multiplier = retryConfigData.getMultiplier().intValue();
+        Long sleepTimeMS = retryConfigData.getSleepTimeMs();
+        while (!getSchemaRegistryStatus().is2xxSuccessful()){
+            checkMaxRetry(retryCount++, maxRetry);
+            sleep(sleepTimeMS);
+            sleepTimeMS *= multiplier;
+        }
+    }
+
+    private HttpStatus getSchemaRegistryStatus(){
+        try {
+            return webClient.method(HttpMethod.GET)
+                    .uri(kafkaConfigData.getSchemaRegistryUrl())
+                    .exchange()
+                    .map(ClientResponse::statusCode)
+                    .block(); // block used to get synchronize result
+        } catch (Exception e) {
+            return HttpStatus.SERVICE_UNAVAILABLE;
+        }
     }
 
     public void checkTopicsCreated() {
