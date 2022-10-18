@@ -1,0 +1,6 @@
+KAFKA-PRODUCER:
+    use spring-kafka to write kafka producer implementation
+
+KAFKA-ADMIN
+    create and verify kafka topics programmatically
+
