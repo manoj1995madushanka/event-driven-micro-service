@@ -59,6 +59,15 @@
             <artifactId>json</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>com.event-driven</groupId>
+            <artifactId>kafka-admin</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.event-driven</groupId>
+            <artifactId>kafka-producer</artifactId>
+        </dependency>
+
 
     </dependencies>
 
