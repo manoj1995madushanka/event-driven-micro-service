@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>base-service</artifactId>
-        <groupId>com.event-driven</groupId>
+        <groupId>com.event_driven_ms</groupId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -13,7 +13,7 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.event-driven</groupId>
+            <groupId>com.event_driven_ms</groupId>
             <artifactId>app-config-data</artifactId>
         </dependency>
 
@@ -60,12 +60,22 @@
         </dependency>
 
         <dependency>
-            <groupId>com.event-driven</groupId>
+            <groupId>com.event_driven_ms</groupId>
             <artifactId>kafka-admin</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.event-driven</groupId>
+            <groupId>com.event_driven_ms</groupId>
             <artifactId>kafka-producer</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjrt</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjtools</artifactId>
         </dependency>
 
 

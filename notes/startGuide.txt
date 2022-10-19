@@ -1,0 +1,6 @@
+go to docker-compose folder and execute below commands
+    docker ps
+    docker-compose -f common.yml -f kafka_cluster.yml up
+    kafkacat -L -b localhost:19092
+
+then run twitter-to-kafka-service

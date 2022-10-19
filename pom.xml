@@ -20,7 +20,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
-    <groupId>com.event-driven</groupId>
+    <groupId>com.event_driven_ms</groupId>
     <artifactId>base-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>base-service</name>
@@ -43,7 +43,7 @@
         <spring-web.version>5.3.23</spring-web.version>
         <json.version>20180813</json.version>
         <avro.version>1.10.0</avro.version>
-        <spring-kafka.version>2.6.2</spring-kafka.version>
+        <spring-kafka.version>2.9.2</spring-kafka.version>
         <kafka-avro-serializer.version>5.3.0</kafka-avro-serializer.version>
     </properties>
 
@@ -58,27 +58,27 @@
         <dependencies>
             <!--Local-->
             <dependency>
-                <groupId>com.event-driven</groupId>
+                <groupId>com.event_driven_ms</groupId>
                 <artifactId>app-config-data</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.event-driven</groupId>
+                <groupId>com.event_driven_ms</groupId>
                 <artifactId>common-config</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.event-driven</groupId>
+                <groupId>com.event_driven_ms</groupId>
                 <artifactId>kafka-model</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.event-driven</groupId>
+                <groupId>com.event_driven_ms</groupId>
                 <artifactId>kafka-admin</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.event-driven</groupId>
+                <groupId>com.event_driven_ms</groupId>
                 <artifactId>kafka-producer</artifactId>
                 <version>${project.version}</version>
             </dependency>
@@ -178,6 +178,25 @@
                 <version>${spring-kafka.version}</version>
             </dependency>
 
+            <!-- AspectJ dependencies -->
+            <dependency>
+                <groupId>org.aspectj</groupId>
+                <artifactId>aspectjrt</artifactId>
+                <version>${aspectj.version}</version>
+                <scope>runtime</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.aspectj</groupId>
+                <artifactId>aspectjtools</artifactId>
+                <version>${aspectj.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.retry</groupId>
+                <artifactId>spring-retry</artifactId>
+                <version>1.3.0</version>
+            </dependency>
+
 
         </dependencies>
     </dependencyManagement>
@@ -192,6 +211,13 @@
                 <configuration>
                     <!-- put your configurations here -->
                     <release>11</release>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <testFailureIgnore>true</testFailureIgnore>
                 </configuration>
             </plugin>
         </plugins>

@@ -1,5 +1,5 @@
 {
-  "namespace": "com.microservice.kafka_module",
+  "namespace": "com.event_driven_ms.kafka_module",
   "type": "record",
   "name": "TwitterAvroModel",
   "fields": [

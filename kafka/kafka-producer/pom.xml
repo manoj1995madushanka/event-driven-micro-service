@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>base-service</artifactId>
-        <groupId>com.event-driven</groupId>
+        <groupId>com.event_driven_ms</groupId>
         <version>0.0.1-SNAPSHOT</version>
         <relativePath>../../pom.xml</relativePath>
     </parent>
@@ -19,11 +19,12 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.event-driven</groupId>
+            <groupId>com.event_driven_ms</groupId>
             <artifactId>app-config-data</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>com.event-driven</groupId>
+            <groupId>com.event_driven_ms</groupId>
             <artifactId>kafka-model</artifactId>
         </dependency>
         <dependency>
@@ -33,6 +34,10 @@
         <dependency>
             <groupId>jakarta.annotation</groupId>
             <artifactId>jakarta.annotation-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.kafka</groupId>
+            <artifactId>kafka-clients</artifactId>
         </dependency>
     </dependencies>
 
