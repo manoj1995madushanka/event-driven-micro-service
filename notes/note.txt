@@ -12,6 +12,11 @@ for set up intellij global config variable execute below command
 'consumer_key' => API key
 'consumer_secret' => API secret
 
+we use separate config repository as a 12 factor architecture methodology
+    https://12factor.net/
+
+
+
 
 
  
