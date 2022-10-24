@@ -98,6 +98,8 @@
                     <execution>
                         <phase>install</phase>
                         <goals>
+                            <!--this build-image follows layered approach-->
+                            <!--that means prevents single jar and use caching during image update-->
                             <goal>build-image</goal>
                         </goals>
                     </execution>
