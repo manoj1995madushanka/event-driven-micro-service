@@ -8,3 +8,14 @@ common.yml
 .env file
     we define versions of images
     service_version should match with project version
+
+for view docker logs
+    docker logs -f container_id
+
+kafkacat consumer
+    kafkacat -C -b HOST:PORT -t TOPIC_NAME
+    eg : kafkacat -C -b localhost:19092 -t twitter-topic
+
+shutdown running containers
+    docker-compose down
+
