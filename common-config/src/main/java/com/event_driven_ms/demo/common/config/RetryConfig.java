@@ -9,12 +9,11 @@ import org.springframework.retry.support.RetryTemplate;
 
 @Configuration
 public class RetryConfig {
-    private final RetryConfigData retryConfigData;
+    private RetryConfigData retryConfigData;
 
-    public RetryConfig(RetryConfigData retryConfigData) {
-        this.retryConfigData = retryConfigData;
+    public RetryConfig(RetryConfigData configData) {
+        this.retryConfigData = configData;
     }
-
     @Bean
     public RetryTemplate buildRetryTemplate() {
         RetryTemplate retryTemplate = new RetryTemplate();

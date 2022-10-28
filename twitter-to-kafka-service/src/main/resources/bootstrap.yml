@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: twitter-to-kafka-service
+  cloud:
+    config:
+      name: twitter-to-kafka-service,config-client
+  config:
+    activate:
+      on-profile: twitter_to_kafka
