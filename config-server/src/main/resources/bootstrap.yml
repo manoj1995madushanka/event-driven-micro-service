@@ -1,0 +1,15 @@
+#bootstrap.yml loading before application.yml load in springboot
+#reference : https://stackoverflow.com/questions/32997352/what-is-the-difference-between-putting-a-property-on-application-yml-or-bootstra#:~:text=on%20this%20post.-,Bootstrap.,credentials%20etc.%2C%20in%20bootstrap.
+
+spring:
+  application:
+    name: configserver
+  cloud:
+    # for high availability and repository caching of config server uri
+    # use ssh with shared file system or http with remote git repository
+    config:
+      server:
+        git:
+          uri: file://Users/Shared/projects/microservices-demo/config-server-repository
+          clone-on-start: true
+    fail-fast: true

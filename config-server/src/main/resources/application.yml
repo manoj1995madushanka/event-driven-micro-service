@@ -1,0 +1,8 @@
+server:
+  port: 8888
+
+# logging level can override logback logging properties in application config
+logging:
+  level:
+    ROOT: INFO
+    org.spring.framework.cloud.config: DEBUG
