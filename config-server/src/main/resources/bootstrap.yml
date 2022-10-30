@@ -10,6 +10,6 @@ spring:
     config:
       server:
         git:
-          uri: file://Users/Shared/projects/microservices-demo/config-server-repository
+          uri: https://github.com/manoj1995madushanka/spring-cloud-config-server-repository.git
           clone-on-start: true
     fail-fast: true
