@@ -1,0 +1,18 @@
+2022-10-29 23:13:38 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.1.5.Final
+2022-10-29 23:13:39 [main] INFO  c.m.demo.config.server.ConfigServer - No active profile set, falling back to default profiles: default
+2022-10-29 23:13:40 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=c5420960-cb4b-3f01-a040-5d97edee1dd2
+2022-10-29 23:13:40 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8888 (http)
+2022-10-29 23:13:40 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8888"]
+2022-10-29 23:13:40 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2022-10-29 23:13:40 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.38]
+2022-10-29 23:13:41 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-10-29 23:13:41 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1834 ms
+2022-10-29 23:13:41 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2022-10-29 23:13:42 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2022-10-29 23:13:42 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8888"]
+2022-10-29 23:13:42 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8888 (http) with context path ''
+2022-10-29 23:13:43 [main] INFO  c.m.demo.config.server.ConfigServer - Started ConfigServer in 5.916 seconds (JVM running for 7.75)
+2022-10-29 23:13:44 [RMI TCP Connection(3)-192.168.43.163] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-10-29 23:13:44 [RMI TCP Connection(3)-192.168.43.163] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-10-29 23:13:44 [RMI TCP Connection(3)-192.168.43.163] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 120 ms
+2022-10-29 23:13:47 [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'

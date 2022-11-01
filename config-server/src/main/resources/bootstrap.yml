@@ -10,6 +10,8 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/manoj1995madushanka/spring-cloud-config-server-repository.git
+          uri: https://github.com/manoj1995madushanka/spring-cloud-config-server-repository
+          username: manoj1995madushanka
+          password: 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
           clone-on-start: true
     fail-fast: true
