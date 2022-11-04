@@ -1,3 +1,5 @@
+# for access config server follow below url
+# http://localhost:8888/config-client/twitter_to_kafka
 spring:
   application:
     name: twitter-to-kafka-service
@@ -6,3 +8,4 @@ spring:
   cloud:
     config:
       name: twitter-to-kafka-service,config-client
+      uri: http://localhost:8888

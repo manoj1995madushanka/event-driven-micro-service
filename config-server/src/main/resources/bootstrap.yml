@@ -1,6 +1,8 @@
 #bootstrap.yml loading before application.yml load in springboot
 #reference : https://stackoverflow.com/questions/32997352/what-is-the-difference-between-putting-a-property-on-application-yml-or-bootstra#:~:text=on%20this%20post.-,Bootstrap.,credentials%20etc.%2C%20in%20bootstrap.
 
+# go to below URl to view configs
+# http://localhost:8888/config-client/twitter_to_kafka
 spring:
   application:
     name: configserver
@@ -14,4 +16,5 @@ spring:
           username: manoj1995madushanka
           password: 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
           clone-on-start: true
+          default-label: main
     fail-fast: true
