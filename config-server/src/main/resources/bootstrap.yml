@@ -1,24 +1,17 @@
-#bootstrap.yml loading before application.yml load in springboot
-#reference : https://stackoverflow.com/questions/32997352/what-is-the-difference-between-putting-a-property-on-application-yml-or-bootstra#:~:text=on%20this%20post.-,Bootstrap.,credentials%20etc.%2C%20in%20bootstrap.
-
-# go to below URl to view configs
-# http://localhost:8888/config-client/twitter_to_kafka
 spring:
   application:
     name: configserver
   cloud:
-    # for high availability and repository caching of config server uri
-    # use ssh with shared file system or http with remote git repository
     config:
       server:
         git:
-          uri: https://github.com/manoj1995madushanka/spring-cloud-config-server-repository
-          username: manoj1995madushanka
-          password: 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
-          clone-on-start: true
+          uri: https://github.com/agelenler/spring-cloud-config-server-repository
           default-label: main
+          username: agelenler
+          password: ****
+          clone-on-start: true
     fail-fast: true
   security:
     user:
       name: spring_cloud_user
-      password: spring_cloud_pwd
+      password: '{cipher}c0d85293cb01a46b3b629a12e5620f4e9d00d4ede8bdf248cf5b83e23f4536501e4b34a8d56b7a34fcee17aa01d05330'
