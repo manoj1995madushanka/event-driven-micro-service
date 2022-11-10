@@ -1,0 +1,34 @@
+run docker desktop
+
+install application
+    mvn clean install -DskipTests
+
+change security of new shell script execute below command in terminal inside docker-compose directory
+    chmod +x check-config-server-started.sh
+
+then run all the containers using below command, execute below commands inside docker-compose directory
+    docker compose -f common.yml -f kafka_cluster.yml down
+    docker compose up
+    docker ps
+
+check logs using twitter-to-kafka service container id
+    docker logs -f container-id
+
+for check twitter messages comes into topics
+    kafkacat -C -b localhost:19092 -t twitter-topic
+
+connect to container shell
+    docker exec -it container-id/bin/bash
+then you can execute commands inside a container(twitter-to-kafka-service)
+    ls
+    cd ./cnb/lifecycle/
+    ls
+***from below command we can see container stats like memory
+    top
+
+
+
+
+
+
+
