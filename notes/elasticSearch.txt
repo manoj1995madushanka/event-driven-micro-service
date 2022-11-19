@@ -1,0 +1,35 @@
+open source search engine
+apache lucene search engine - high performance full featured text search engine
+organize your data and make it easily accessible
+easy restful API based on json
+easy scale
+type guessing, dynamic mapping and Lucene standard analysers
+Query DSL for complex queries
+
+
+Inverted Index Feature
+    Elasticsearch uses a structure called an inverted index, which is designed to allow very fast full text searches.
+    An inverted index consists of a list of all the unique words that appear in any document, and for each word, a list of the documents in which it appears
+    You can find only terms that exist in your index, so both the indexed text and the query string must be normalized into the same form.
+
+•Elasticsearch analyzers Feature
+
+Analysing consists of 3 steps.
+
+1.) Character filters: Tidy up the string like strip out HTML, change & to and etc..
+2.) Tokenizers: Tokenize the string into individual words and split the string into terms using whitespace or punctations.
+3.) Token filters: Filter out the string like change the word like lowercase, remove terms like stopwords such as a, the and finally add words like synonyms.
+
+- Elasticsearch provides many character filters, tokenizers, and token filters out of the box. These can be combined to create custom analyzers suitable for different purposes
+
+Basic Data Types
+    Binary: Base64 encoded string
+    Numbers: integer, long, double..
+    Boolean: true/false
+    Text: Analysed, unstructured text
+    Keywords: Keywords, wildcards (Not analysed)
+    Object: A json object
+    Date:
+        - A formatted date as string
+        - An Integer that represents seconds since the epoch
+        - A Long that represents milliseconds since the epoch
