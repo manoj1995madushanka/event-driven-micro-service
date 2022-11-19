@@ -19,3 +19,5 @@ kafkacat consumer
 shutdown running containers
     docker-compose down
 
+run elasticsearch locally
+    docker-compose -f common.yml -f elastic-cluster.yml up
