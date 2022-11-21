@@ -1,8 +1,8 @@
-package com.microservices.demo.elastic.index.client.util.service.impl;
+package com.microservices.demo.elastic.index.client.service.impl;
 
 import com.microservices.demo.config.ElasticConfigData;
+import com.microservices.demo.elastic.index.client.service.ElasticIndexClient;
 import com.microservices.demo.elastic.index.client.util.ElasticIndexUtil;
-import com.microservices.demo.elastic.index.client.util.service.ElasticIndexClient;
 import com.microservices.demo.elastic.model.index.impl.TwitterIndexModel;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,6 +19,8 @@ public class TwitterElasticIndexClient implements ElasticIndexClient<TwitterInde
     private static final Logger LOG = LoggerFactory.getLogger(TwitterElasticIndexClient.class);
 
     private final ElasticConfigData elasticConfigData;
+    // this operation class provides feature to save data
+    // but we have another way also to save data using elastic search repository
     private final ElasticsearchOperations elasticsearchOperations;
     private final ElasticIndexUtil elasticIndexUtil;
 
