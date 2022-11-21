@@ -21,3 +21,6 @@ shutdown running containers
 
 run elasticsearch locally
     docker-compose -f common.yml -f elastic-cluster.yml up
+
+check image availability
+    docker images | grep 'com.microservices.demo/kafka.to.elastic.service'
