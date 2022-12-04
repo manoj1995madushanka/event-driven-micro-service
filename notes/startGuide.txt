@@ -4,3 +4,7 @@ go to docker-compose folder and execute below commands
     kafkacat -L -b localhost:19092
 
 then run twitter-to-kafka-service
+
+run elastic search with docker
+    docker-compose -f common.yml -f elastic_cluster.yml up
+
