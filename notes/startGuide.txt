@@ -8,3 +8,4 @@ then run twitter-to-kafka-service
 run elastic search with docker
     docker-compose -f common.yml -f elastic_cluster.yml up
 
+before running elastic-query-service make sure to run config-server
