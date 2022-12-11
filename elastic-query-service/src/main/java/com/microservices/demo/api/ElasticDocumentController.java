@@ -14,7 +14,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "/documents")
+//URL versioning
+//@RequestMapping(path = "/documents/v1")
+//media type versioning (applicationHeader="application/vnd.api.v1+json" in postman)
+// @RequestMapping(path = "/documents/v1" , produces = "application/vnd.api.v1+json")
+@RequestMapping(path = "/documents/v1")
 public class ElasticDocumentController {
 
     private static final Logger LOG = LoggerFactory.getLogger(ElasticDocumentController.class);
