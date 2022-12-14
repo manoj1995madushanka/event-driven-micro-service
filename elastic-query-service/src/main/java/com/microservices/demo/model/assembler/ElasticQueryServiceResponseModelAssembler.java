@@ -31,10 +31,10 @@ public class ElasticQueryServiceResponseModelAssembler
         responseModel.add(
                 linkTo(methodOn(ElasticDocumentController.class)
                         .getDocumentById((twitterIndexModel.getId())))
-                        .withSelfRel());
+                        .withSelfRel());// self and rel link
         responseModel.add(
                 linkTo(ElasticDocumentController.class)
-                        .withRel("documents"));
+                        .withRel("documents"));// base path
         return responseModel;
     }
 

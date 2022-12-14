@@ -8,6 +8,11 @@ import org.springframework.hateoas.RepresentationModel;
 
 import java.time.LocalDateTime;
 
+/**
+ * extending class is responsible to generate hatoes links
+ * for get this functionality we need to make assembler
+ * here we created that called ElasticQueryServiceResponseModelAssembler class
+ * */
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
