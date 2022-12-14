@@ -47,6 +47,7 @@
 		<spring-cloud-dependencies.version>Hoxton.SR9</spring-cloud-dependencies.version>
 		<elasticsearch.version>${elastic-rest-high-level-client.version}</elasticsearch.version>
 		<elastic-rest-high-level-client.version>7.9.1</elastic-rest-high-level-client.version>
+		<springdoc-openapi-ui.version>1.5.0</springdoc-openapi-ui.version>
 	</properties>
 
 	<repositories>
@@ -219,6 +220,12 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-starter-hateoas</artifactId>
 				<version>${spring-boot.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springdoc</groupId>
+				<artifactId>springdoc-openapi-ui</artifactId>
+				<version>${springdoc-openapi-ui.version}</version>
 			</dependency>
 
 
