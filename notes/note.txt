@@ -17,6 +17,7 @@ we use separate config repository as a 12 factor architecture methodology
 
 springDoc openAPI (swagger V3) supports content negotiation versioning but swagger V2 doesn't support that feature
 
-
+swagger annotations
+    @Operation, @ApiResponse, @Content, @Schema
 
  
