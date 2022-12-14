@@ -3,6 +3,11 @@ package com.microservices.demo.api;
 import com.microservices.demo.business.ElasticQueryService;
 import com.microservices.demo.model.ElasticQueryServiceRequestModel;
 import com.microservices.demo.model.ElasticQueryServiceResponseModel;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
@@ -28,6 +33,16 @@ public class ElasticDocumentController {
         this.elasticQueryService = elasticQueryService;
     }
 
+    @Operation(summary = "Get all elastic documents.")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Successful response.", content = {
+                    @Content(mediaType = "application/vnd.api.v1+json",
+                            schema = @Schema(implementation = ElasticQueryServiceResponseModel.class)
+                    )
+            }),
+            @ApiResponse(responseCode = "400", description = "Not found."),
+            @ApiResponse(responseCode = "500", description = "Internal server error.")
+    })
     @GetMapping("/")
     //@ResponseBody used to serialize java response object to json, but it is not required when we add @RestController
     public @ResponseBody ResponseEntity<List<ElasticQueryServiceResponseModel>> getAllDocuments() {
@@ -40,6 +55,15 @@ public class ElasticDocumentController {
 
     @GetMapping("/{id}")
     public @ResponseBody ResponseEntity<ElasticQueryServiceResponseModel> getDocumentById(@PathVariable @NotEmpty String id) {
+
+        ElasticQueryServiceResponseModel response = elasticQueryService.getDocumentById(id);
+        LOG.info("Elasticsearch returned document with id {}.", id);
+
+        return ResponseEntity.ok(response);
+    }
+
+    @GetMapping(value = "/{id}", produces = "application/vnd.api.v2+json")
+    public @ResponseBody ResponseEntity<ElasticQueryServiceResponseModel> getDocumentByIdV2(@PathVariable @NotEmpty String id) {
 
         ElasticQueryServiceResponseModel response = elasticQueryService.getDocumentById(id);
         LOG.info("Elasticsearch returned document with id {}.", id);
