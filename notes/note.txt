@@ -22,3 +22,6 @@ swagger annotations
 
  when we using spring cloud loadbalancer we need to setup instances manually(services.yml file)
  each instance will get call round robin pattern(default way) from this load balancing mechanism
+
+
+
