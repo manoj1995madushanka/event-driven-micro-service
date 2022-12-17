@@ -3,7 +3,7 @@
 <div class="container">
     <h1>Query Client</h1>
     <div class="mx-auto mt-5">
-        <form class="col-12" action="#" th:action="@{/query-by-text}" th:object="${elasticQueryWebClientRequestModel}" method="post">
+        <form class="col-12" action="#" th:action="@{/query-by-text}" th:object="${eQWCRequestModel}" method="post">
             <div class="form-group">
                 <input class="form-control" type="text" th:field="*{text}" id="text" placeholder="Enter text to search">
                 <span th:if="${#fields.hasErrors('text')}" th:errors="*{text}"></span>
@@ -11,7 +11,7 @@
                     <input class="btn btn-dark" type="submit" value="Search">
                 </div>
             </div>
-            <div class="col-12" th:switch="${elasticQueryWebClientResponseModels}">
+            <div class="col-12" th:switch="${eQWCResponseModels}">
                 <h4 th:case="null">
                     <span th:text="${error != null} ? ${error + '-' + error_description} : 'No results yet!'"/>
                 </h4>
@@ -26,11 +26,11 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr th:each="elasticQueryWebClientResponseModel : ${elasticQueryWebClientResponseModels}">
-                            <th scope="row" th:text="${elasticQueryWebClientResponseModel.id}"></th>
-                            <td th:text="${elasticQueryWebClientResponseModel.userId}"></td>
-                            <td th:text="${elasticQueryWebClientResponseModel.text}"></td>
-                            <td th:text="${elasticQueryWebClientResponseModel.createdAt}"></td>
+                        <tr th:each="eQWCResponseModel : ${eQWCResponseModels}">
+                            <th scope="row" th:text="${eQWCResponseModel.id}"></th>
+                            <td th:text="${eQWCResponseModel.userId}"></td>
+                            <td th:text="${eQWCResponseModel.text}"></td>
+                            <td th:text="${eQWCResponseModel.createdAt}"></td>
                         </tr>
                         </tbody>
                     </table>
