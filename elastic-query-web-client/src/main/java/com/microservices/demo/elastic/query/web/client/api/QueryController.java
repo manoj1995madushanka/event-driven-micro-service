@@ -1,18 +1,16 @@
 package com.microservices.demo.elastic.query.web.client.api;
 
-import com.microservices.demo.elastic.query.web.client.model.EQWCRequestModel;
-import com.microservices.demo.elastic.query.web.client.model.EQWCResponseModel;
+import com.microservices.demo.elastic.query.web.client.common.model.EQWCRequestModel;
+import com.microservices.demo.elastic.query.web.client.common.model.EQWCResponseModel;
 import com.microservices.demo.elastic.query.web.client.service.ElasticQueryWebClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.validation.Valid;
-import java.util.ArrayList;
 import java.util.List;
 
 // we can not use rest controller here because we are using this endpoint in themeleaf

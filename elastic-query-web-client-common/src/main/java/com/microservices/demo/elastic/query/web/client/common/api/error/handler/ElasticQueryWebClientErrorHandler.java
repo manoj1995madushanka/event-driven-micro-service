@@ -1,4 +1,4 @@
-package com.microservices.demo.elastic.query.web.client.api.error.handler;
+package com.microservices.demo.elastic.query.web.client.common.api.error.handler;
 
 import com.microservices.demo.elastic.query.web.client.model.EQWCRequestModel;
 import org.slf4j.Logger;

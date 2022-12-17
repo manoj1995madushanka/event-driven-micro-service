@@ -62,6 +62,10 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>com.microservices.demo</groupId>
+            <artifactId>elastic-query-web-client-common</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
