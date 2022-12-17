@@ -27,7 +27,7 @@ public class ElasticDocumentController {
     }
 
     /**
-     *
+     * text/event-stream media type used to get data in chunks on a reactive rest method
      * */
     @PostMapping(value = "/get-doc-by-text",
             produces = MediaType.TEXT_EVENT_STREAM_VALUE,// make sure return response as chunks to cstomer
