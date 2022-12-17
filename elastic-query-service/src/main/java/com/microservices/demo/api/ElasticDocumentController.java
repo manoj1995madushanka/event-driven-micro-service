@@ -1,8 +1,8 @@
 package com.microservices.demo.api;
 
 import com.microservices.demo.business.ElasticQueryService;
-import com.microservices.demo.model.ElasticQueryServiceRequestModel;
-import com.microservices.demo.model.ElasticQueryServiceResponseModel;
+import com.microservices.demo.elastic.query.service.common.model.ElasticQueryServiceRequestModel;
+import com.microservices.demo.elastic.query.service.common.model.ElasticQueryServiceResponseModel;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotEmpty;
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController

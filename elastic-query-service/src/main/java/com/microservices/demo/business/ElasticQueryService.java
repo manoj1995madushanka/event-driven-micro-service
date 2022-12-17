@@ -1,6 +1,6 @@
 package com.microservices.demo.business;
 
-import com.microservices.demo.model.ElasticQueryServiceResponseModel;
+import com.microservices.demo.elastic.query.service.common.model.ElasticQueryServiceResponseModel;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

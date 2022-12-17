@@ -1,4 +1,4 @@
-package com.microservices.demo.model;
+package com.microservices.demo.elastic.query.service.common.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

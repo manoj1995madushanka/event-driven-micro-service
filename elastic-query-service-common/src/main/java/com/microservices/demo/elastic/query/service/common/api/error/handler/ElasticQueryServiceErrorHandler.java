@@ -1,6 +1,5 @@
-package com.microservices.demo.api.error_handler;
+package com.microservices.demo.elastic.query.service.common.api.error.handler;
 
-import com.microservices.demo.api.ElasticDocumentController;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
