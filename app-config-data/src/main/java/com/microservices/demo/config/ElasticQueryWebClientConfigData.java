@@ -4,6 +4,8 @@ import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 
+import java.util.List;
+
 @Data
 @Configuration
 @ConfigurationProperties(prefix = "elastic-query-web-client")
@@ -25,6 +27,8 @@ public class ElasticQueryWebClientConfigData {
         private String contentType;
         private String acceptType;
         private String baseUrl;
+        private String serviceId;
+        private List<Instance> instances;
     }
 
     @Data
@@ -32,5 +36,12 @@ public class ElasticQueryWebClientConfigData {
         private String method;
         private String accept;
         private String uri;
+    }
+
+    @Data
+    public static class Instance{
+        public String id;
+        public String host;
+        public Integer port;
     }
 }

@@ -5,6 +5,7 @@ import com.microservices.demo.elastic.query.web.client.model.EQWCResponseModel;
 import com.microservices.demo.elastic.query.web.client.service.ElasticQueryWebClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,6 +24,7 @@ public class QueryController {
 
     // this is the object we communicate with the tymeleaf template
     private final ElasticQueryWebClient elasticQueryWebClient;
+
 
     public QueryController(ElasticQueryWebClient elasticQueryWebClient) {
         this.elasticQueryWebClient = elasticQueryWebClient;

@@ -217,6 +217,15 @@
 				<version>${spring-boot.version}</version>
 			</dependency>
 
+			<!--below dependency will help to manually add load balancer to front end
+			in future this will replace with discovery service and api gateway instead of manually add services to load
+			balancer-->
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-loadbalancer</artifactId>
+				<version>${spring-cloud.version}</version>
+			</dependency>
+
 			<dependency>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-starter-hateoas</artifactId>
