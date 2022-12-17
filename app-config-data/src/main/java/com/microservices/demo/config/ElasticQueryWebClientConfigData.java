@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Configuration;
 public class ElasticQueryWebClientConfigData {
 
     private WebClient webClient;
+    private Query queryByText;
 
     /**
      * we are using inner class because in config-client-elastic_query_web.yml
@@ -24,5 +25,12 @@ public class ElasticQueryWebClientConfigData {
         private String contentType;
         private String acceptType;
         private String baseUrl;
+    }
+
+    @Data
+    public static class Query{
+        private String method;
+        private String accept;
+        private String uri;
     }
 }

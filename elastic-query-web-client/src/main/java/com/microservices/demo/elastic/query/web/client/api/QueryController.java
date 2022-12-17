@@ -2,6 +2,7 @@ package com.microservices.demo.elastic.query.web.client.api;
 
 import com.microservices.demo.elastic.query.web.client.model.EQWCRequestModel;
 import com.microservices.demo.elastic.query.web.client.model.EQWCResponseModel;
+import com.microservices.demo.elastic.query.web.client.service.ElasticQueryWebClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -19,6 +20,13 @@ import java.util.List;
 public class QueryController {
 
     private static final Logger LOG = LoggerFactory.getLogger(QueryController.class);
+
+    // this is the object we communicate with the tymeleaf template
+    private final ElasticQueryWebClient elasticQueryWebClient;
+
+    public QueryController(ElasticQueryWebClient elasticQueryWebClient) {
+        this.elasticQueryWebClient = elasticQueryWebClient;
+    }
 
     @GetMapping("")
     public String index(){
@@ -40,11 +48,11 @@ public class QueryController {
     public String queryByText(@Valid EQWCRequestModel requestModel,
                               Model model) {
         LOG.info("Querying with text {}", requestModel.getText());
-        List<EQWCResponseModel> responseModels = new ArrayList<>();
-        responseModels.add(EQWCResponseModel.builder()
-                .id("1")
-                .text(requestModel.getText())
-                .build());
+        List<EQWCResponseModel> responseModels =elasticQueryWebClient.getDataByText(requestModel);
+//        responseModels.add(EQWCResponseModel.builder()
+//                .id("1")
+//                .text(requestModel.getText())
+//                .build());
         model.addAttribute("elasticQueryWebClientResponseModels", responseModels);
         model.addAttribute("searchText", requestModel.getText());
         model.addAttribute("elasticQueryWebClientRequestModel",
