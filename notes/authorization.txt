@@ -1,0 +1,3 @@
+keycloak is a open source software that provide identity and access management
+we use postgress for store user authentication data
+pgadmin is a software to view postgress db

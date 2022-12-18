@@ -12,3 +12,12 @@ before running elastic-query-service make sure to run config-server
 
 for run elastic-query-web-client we only need config server and elastic-query-web-client after starting app
 navigate to localhost:8184/elastic-query-web-client/home
+
+run keycloak authorization server
+    docker-compose -f keycloak_authorization_server.yml up
+
+
+
+
+
+
