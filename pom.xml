@@ -23,7 +23,8 @@
         <module>elastic-query-service-common</module>
 		<module>elastic-query-web-client-common</module>
 		<module>reactive-elastic-query-service</module>
-	</modules>
+        <module>reactive-elastic-query-web-client</module>
+    </modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
