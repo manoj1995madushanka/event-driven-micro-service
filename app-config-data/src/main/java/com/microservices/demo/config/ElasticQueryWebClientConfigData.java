@@ -10,14 +10,9 @@ import java.util.List;
 @Configuration
 @ConfigurationProperties(prefix = "elastic-query-web-client")
 public class ElasticQueryWebClientConfigData {
-
     private WebClient webClient;
     private Query queryByText;
 
-    /**
-     * we are using inner class because in config-client-elastic_query_web.yml
-     * has WebClient object as separate node
-     */
     @Data
     public static class WebClient {
         private Integer connectTimeoutMs;
@@ -32,16 +27,16 @@ public class ElasticQueryWebClientConfigData {
     }
 
     @Data
-    public static class Query{
+    public static class Query {
         private String method;
         private String accept;
         private String uri;
     }
 
     @Data
-    public static class Instance{
-        public String id;
-        public String host;
-        public Integer port;
+    public static class Instance {
+        private String id;
+        private String host;
+        private Integer port;
     }
 }

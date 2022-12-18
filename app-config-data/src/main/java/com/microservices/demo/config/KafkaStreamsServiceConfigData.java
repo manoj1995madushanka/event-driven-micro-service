@@ -6,7 +6,8 @@ import org.springframework.context.annotation.Configuration;
 
 @Data
 @Configuration
-@ConfigurationProperties(prefix = "elastic-query-config")
-public class ElasticQueryConfigData {
-    private String textField;
+@ConfigurationProperties(prefix = "kafka-streams-service")
+public class KafkaStreamsServiceConfigData {
+	private String version;
+	private String customAudience;
 }
