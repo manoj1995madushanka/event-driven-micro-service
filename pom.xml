@@ -26,6 +26,7 @@
         <module>reactive-elastic-query-web-client</module>
         <module>elastic-query-web-client-2</module>
         <module>kafka-stream-service</module>
+        <module>discovery-service</module>
     </modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
