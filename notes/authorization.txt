@@ -1,3 +1,4 @@
 keycloak is a open source software that provide identity and access management
 we use postgress for store user authentication data
 pgadmin is a software to view postgress db
+keycloak provides single sign on (SSO) feature also that means hen we use two app need to log only one app
